@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+    </head>
+<title> login page </title>
+<style>
+form{background:pink;
+            margin:100px;}
+</style>
+<form method="POST" action="/login">
+<br>
+<% if(messages.success){ %>
+    <%=console.log(req.session)%>
+    <script type="text/javascript">
+        swal({
+            title: "Success!",
+            text: "<%= messages.success %>!",
+            type: "success"
+        })
+ </script>
+ <% } %>
+ <% if(messages.error){ %>
+     <script type="text/javascript">
+         swal({
+             title: "error!",
+             text: "<%= messages.error %>!",
+             type: "error"
+         })
+  </script>
+  <% } %>
+<center>
+<h1> Login page </h1>
+<hr>
+User name or Email: <br>
+<input type="text" name="user" value="" size="40" >
+<br>
+Password: <br>
+<input type="password" name="password" value="" size="40" >
+<br> <br> <br>
+<input type="submit" value="login">
+<br/>
+<a href="/register"> register new user</a>
+</center>
+<br> <br>
+</form>
+<body bgcolor="grey">
+<h3 align="right"> <a href="/"> homepage </a>
+<hr size="2" width="50%" align="center" color="blue">
+<hr size="3" noshade>
+</body>
+</html>

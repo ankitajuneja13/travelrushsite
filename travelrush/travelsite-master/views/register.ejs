@@ -1,0 +1,51 @@
+<html>
+   <head>  </head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+   <title>  registration form  </title>
+   <form method="post" action="/signup">
+      <h1 align="center" > <font color="yellow"> Travel rush.com  </font></h1>
+      <br>
+      <h2> User Registration page </h2>
+      <hr>
+      Name: <br>
+      <% if(messages.success){ %>
+         <script type="text/javascript">
+             swal({
+                 title: "Success!",
+                 text: "<%= messages.success %>!",
+                 type: "success"
+             })
+      </script>
+                    <% } %>
+                    <% if(messages.error){ %>
+                     <script type="text/javascript">
+                         swal({
+                             title: "Error!",
+                             text: "<%= messages.error %>!",
+                             type: "error"
+                         })
+                  </script>
+                                <% } %>
+      <input required type="text" name="person" value="<%= req.body?req.body.person:'' %>" size="40" >
+      <br>
+      Email: <br>
+      <input required type="email" name="mail" value="<%= req.body?req.body.person:'' %>" size="40" >
+      <br>
+      Mobile: <br>
+      <input required type="number" name="mobile" value="<%= req.body?req.body.person:'' %>" size="40" >
+      <br>
+      User name: <br>
+      <input required type="text" name="username" value="<%= req.body?req.body.person:'' %>" size="40" >
+      <br>
+      Password <br>
+      <input required type="password" name="password" value="<%= req.body?req.body.person:'' %>" size="40" >
+      <br>
+      <br> <br>
+      Click on submit button to register <input required type="submit" value="submit">
+      <br>  <br>
+      Click on clear button to reset &nbsp &nbsp<input required type="reset" value="clear">
+      <h3 align="right">
+      <a href="travel.html"> homepage </a>
+   </form>
+   <body bgcolor="grey"></body>
+</html>
